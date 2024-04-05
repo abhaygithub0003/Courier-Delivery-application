@@ -1,0 +1,43 @@
+﻿@model Courier_Tracking_and_Delivery_System.Models.Package
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-danger">Delete Package</h2>
+                </div>
+                <div class="card-body">
+                    <h3 class="text-danger">Are you sure you want to delete this package?</h3>
+                    <div>
+                        <h4>Package Information</h4>
+                        <hr />
+                        <dl class="row">
+                            <dt class="col-sm-3">Package ID</dt>
+                            <dd class="col-sm-9">@Model.Id</dd>
+
+                            <dt class="col-sm-3">Pickup Address</dt>
+                            <dd class="col-sm-9">@Model.PickupAddress</dd>
+
+                            <dt class="col-sm-3">Delivery Address</dt>
+                            <dd class="col-sm-9">@Model.DeliveryAddress</dd>
+
+                            <dt class="col-sm-3">Package Type</dt>
+                            <dd class="col-sm-9">@Model.PackageType</dd>
+
+                            <dt class="col-sm-3">Preferred Delivery Time</dt>
+                            <dd class="col-sm-9">@Model.PreferredDeliveryTime</dd>
+                        </dl>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <form asp-action="Delete" asp-controller="Package" method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

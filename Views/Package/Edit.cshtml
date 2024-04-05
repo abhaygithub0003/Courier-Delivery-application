@@ -1,0 +1,35 @@
+﻿@model Courier_Tracking_and_Delivery_System.Models.Package
+
+<h2>Edit Package</h2>
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="PickupAddress">Pickup Address:</label>
+        <input asp-for="PickupAddress" class="form-control" />
+        <span asp-validation-for="PickupAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DeliveryAddress">Delivery Address:</label>
+        <input asp-for="DeliveryAddress" class="form-control" />
+        <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PackageType">Package Type:</label>
+        <input asp-for="PackageType" class="form-control" />
+        <span asp-validation-for="PackageType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PreferredDeliveryTime">Preferred Delivery Time:</label>
+        <input asp-for="PreferredDeliveryTime" class="form-control" />
+        <span asp-validation-for="PreferredDeliveryTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DeliveryBy">Delivery By:</label>
+        <input asp-for="DeliveryBy" class="form-control" />
+        <span asp-validation-for="DeliveryBy" class="text-danger"></span>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="@Url.Action("Details", "Package", new { id = Model.Id })" class="btn btn-secondary">Cancel</a>
+</form>
+

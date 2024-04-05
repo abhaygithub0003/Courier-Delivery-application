@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Courier Tracking and Delivery System.props" />
+</Project>

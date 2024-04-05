@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Courier_Tracking_and_Delivery_System.Models.Package>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Package ID</th>
+            <th>Pickup Address</th>
+            <th>Delivery Address</th>
+            <th>Package Type</th>
+            <th>Preferred Delivery Time</th>
+            <th>Need Delivery Before</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var package in Model)
+        {
+            <tr>
+                <td>@package.Id</td>
+                <td>@package.PickupAddress</td>
+                <td>@package.DeliveryAddress</td>
+                <td>@package.PackageType</td>
+                <td>@package.PreferredDeliveryTime.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@package.DeliveryBy.ToString("yyyy-MM-dd HH:mm")</td>
+
+                <td>
+                    <div class="btn-group" role="group" aria-label="Package Actions">
+                        <a href="@Url.Action("Details", "Package", new { id = package.Id })" class="btn btn-info">Details</a> |
+                        <a href="@Url.Action("Edit", "Package", new { id = package.Id })" class="btn btn-warning">Edit</a> |
+                        <a href="@Url.Action("Delete", "Package", new { id = package.Id })" class="btn btn-danger">Delete</a>
+                    </div>
+                    <div class="mt-2">
+                        <a href="@Url.Action("Create", "PackageStatus", new { packageId = package.Id })" class="btn btn-success">Status</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,31 @@
+﻿@model Courier_Tracking_and_Delivery_System.Models.Package
+
+<h2>Package Details</h2>
+
+<div>
+    <h4>Package Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Package ID</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">Pickup Address</dt>
+        <dd class="col-sm-10">@Model.PickupAddress</dd>
+
+        <dt class="col-sm-2">Delivery Address</dt>
+        <dd class="col-sm-10">@Model.DeliveryAddress</dd>
+
+        <dt class="col-sm-2">Package Type</dt>
+        <dd class="col-sm-10">@Model.PackageType</dd>
+
+        <dt class="col-sm-2">Preferred Delivery Time</dt>
+        <dd class="col-sm-10">@Model.PreferredDeliveryTime.ToString("yyyy-MM-dd HH:mm")</dd>
+
+        <dt class="col-sm-2">Delivery By</dt>
+        <dd class="col-sm-10">@Model.DeliveryBy.ToString("yyyy-MM-dd HH:mm")</dd>
+
+    </dl>
+</div>
+
+<a href="@Url.Action("Edit", "Package", new { id = Model.Id })" class="btn btn-primary">Edit</a>
+<a href="@Url.Action("Index", "Package")" class="btn btn-secondary">Back to List</a>

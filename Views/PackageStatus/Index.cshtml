@@ -1,0 +1,78 @@
+﻿@model List<Courier_Tracking_and_Delivery_System.Models.PackageStatus>
+
+@{
+    int inTransitCount = Model.Count(status => status.Status == "In Transit");
+    int outForDeliveryCount = Model.Count(status => status.Status == "Out for Delivery");
+    int deliveredCount = Model.Count(status => status.Status == "Delivered");
+}
+
+<div class="container">
+    <h2 class="text-center mt-5 mb-4">Package Status</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form method="get" class="my-4" action="@Url.Action("Index")">
+                    <div class="input-group">
+                        <input type="number" id="packageId" name="packageId" class="form-control form-control-sm" placeholder="Enter Package ID" />
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Status Counts</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">In Transit: <span class="badge bg-primary">@inTransitCount</span></li>
+                        <li class="list-group-item">Out for Delivery: <span class="badge bg-warning">@outForDeliveryCount</span></li>
+                        <li class="list-group-item">Delivered: <span class="badge bg-success">@deliveredCount</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   @if (Model.Any())
+    {
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Package ID</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var status in Model)
+                {
+                    <tr>
+                        <td>@status.PackageId</td>
+                        <td>@status.Status</td>
+                        <td>@status.StatusDate.ToString("yyyy-MM-dd HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="mt-4">No status history available for this package.</p>
+    }
+</div>
+
+<style>
+    /* Custom CSS for left-aligning the search column */
+    .input-group {
+        justify-content: flex-start;
+    }
+
+    /* Adjust input width for smaller size */
+    input.form-control {
+        width: 60%; /* Adjust this value as needed */
+    }
+</style>

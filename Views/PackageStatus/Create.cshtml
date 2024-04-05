@@ -1,0 +1,42 @@
+﻿@model Courier_Tracking_and_Delivery_System.Models.PackageStatus
+
+<h2 class="mb-4">Package Status</h2>
+
+<div class="container">
+    <form asp-action="Create">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Status" class="form-label">Status:</label>
+                    <select asp-for="Status" class="form-select">
+                        <option value="In Transit">In Transit</option>
+                        <option value="Out for Delivery">Out for Delivery</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="StatusDate" class="form-label">Status Date:</label>
+                    <input asp-for="StatusDate" class="form-control" />
+                    <span asp-validation-for="StatusDate" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Remarks" class="form-label">Remarks:</label>
+            <input asp-for="Remarks" class="form-control" />
+            <span asp-validation-for="Remarks" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PackageId" class="form-label">Package ID:</label>
+            <input asp-for="PackageId" class="form-control" readonly />
+            <span asp-validation-for="PackageId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
