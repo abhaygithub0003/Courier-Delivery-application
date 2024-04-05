@@ -155,6 +155,7 @@ namespace Courier_Tracking_and_Delivery_System.Controllers
             var packages = _context.Packages.ToList();
             return View(packages);
         }
+        [AllowAnonymous]
             public IActionResult ConfirmOrder()
             {
                 return View();

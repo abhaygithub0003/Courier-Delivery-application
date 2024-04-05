@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Asp.net core\\Courier Tracking and Delivery System\\Courier Tracking and Delivery System.csproj": {}
+    "C:\\Users\\Asus\\Downloads\\NewFolder\\TEST1\\Courier Tracking and Delivery System.csproj": {}
   },
   "projects": {
-    "D:\\Asp.net core\\Courier Tracking and Delivery System\\Courier Tracking and Delivery System.csproj": {
+    "C:\\Users\\Asus\\Downloads\\NewFolder\\TEST1\\Courier Tracking and Delivery System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Asp.net core\\Courier Tracking and Delivery System\\Courier Tracking and Delivery System.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Downloads\\NewFolder\\TEST1\\Courier Tracking and Delivery System.csproj",
         "projectName": "Courier Tracking and Delivery System",
-        "projectPath": "D:\\Asp.net core\\Courier Tracking and Delivery System\\Courier Tracking and Delivery System.csproj",
+        "projectPath": "C:\\Users\\Asus\\Downloads\\NewFolder\\TEST1\\Courier Tracking and Delivery System.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\Asp.net core\\Courier Tracking and Delivery System\\obj\\",
+        "outputPath": "C:\\Users\\Asus\\Downloads\\NewFolder\\TEST1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
