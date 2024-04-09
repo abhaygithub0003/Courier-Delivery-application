@@ -1,6 +1,25 @@
 ﻿@model IEnumerable<Courier_Tracking_and_Delivery_System.Models.Package>
 
-<table class="table">
+@{
+    // Initialize an array to store the count of deliveries for each month
+    int[] deliveriesPerMonth = new int[12];
+
+    // Loop through each package to count deliveries for each month
+    foreach (var package in Model)
+    {
+        // Get the month index (0-based) from the delivery date
+        int monthIndex = package.DeliveryBy.Month - 1;
+
+        // Increment the count for the corresponding month
+        deliveriesPerMonth[monthIndex]++;
+    }
+}
+
+<div>
+    <canvas id="packageChart" width="400" height="200"></canvas>
+</div>
+
+<table class="table mt-3">
     <thead>
         <tr>
             <th>Package ID</th>
@@ -38,3 +57,29 @@
     </tbody>
 </table>
 
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('packageChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Month-wise Deliveries',
+                    data: [@string.Join(",", deliveriesPerMonth)], // Use the calculated deliveries per month
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}
