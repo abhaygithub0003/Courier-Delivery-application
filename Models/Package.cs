@@ -6,6 +6,8 @@ namespace Courier_Tracking_and_Delivery_System.Models
     public class Package
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Name is required")]
+        public string Name { get; set; }
 
         [Required(ErrorMessage = "Pickup address is required")]
         public string PickupAddress { get; set; }

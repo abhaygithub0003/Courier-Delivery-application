@@ -4,19 +4,16 @@ using Courier_Tracking_and_Delivery_System.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Courier_Tracking_and_Delivery_System.Data.Migrations
+namespace Courier_Tracking_and_Delivery_System.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240403190655_anem")]
-    partial class anem
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,6 +37,10 @@ namespace Courier_Tracking_and_Delivery_System.Data.Migrations
                     b.Property<DateTime>("DeliveryBy")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PackageType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -50,10 +51,6 @@ namespace Courier_Tracking_and_Delivery_System.Data.Migrations
 
                     b.Property<DateTime>("PreferredDeliveryTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -69,18 +66,15 @@ namespace Courier_Tracking_and_Delivery_System.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PackageId")
                         .HasColumnType("int");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StatusDate")

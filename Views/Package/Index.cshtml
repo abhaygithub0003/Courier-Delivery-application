@@ -1,16 +1,13 @@
 ﻿@model IEnumerable<Courier_Tracking_and_Delivery_System.Models.Package>
 
 @{
-    // Initialize an array to store the count of deliveries for each month
+
     int[] deliveriesPerMonth = new int[12];
 
-    // Loop through each package to count deliveries for each month
     foreach (var package in Model)
     {
-        // Get the month index (0-based) from the delivery date
         int monthIndex = package.DeliveryBy.Month - 1;
 
-        // Increment the count for the corresponding month
         deliveriesPerMonth[monthIndex]++;
     }
 }
@@ -23,6 +20,7 @@
     <thead>
         <tr>
             <th>Package ID</th>
+            <th>Name</th>
             <th>Pickup Address</th>
             <th>Delivery Address</th>
             <th>Package Type</th>
@@ -36,6 +34,7 @@
         {
             <tr>
                 <td>@package.Id</td>
+                <td>@package.Name</td>
                 <td>@package.PickupAddress</td>
                 <td>@package.DeliveryAddress</td>
                 <td>@package.PackageType</td>
@@ -67,7 +66,7 @@
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                 datasets: [{
                     label: 'Month-wise Deliveries',
-                    data: [@string.Join(",", deliveriesPerMonth)], // Use the calculated deliveries per month
+                    data: [@string.Join(",", deliveriesPerMonth)], 
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1

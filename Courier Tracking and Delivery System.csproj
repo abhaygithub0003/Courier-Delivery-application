@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <!--<Nullable>enable</Nullable>-->
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-Courier_Tracking_and_Delivery_System-2d90ffee-f973-4939-8ac8-36b3f232da90</UserSecretsId>
     <RootNamespace>Courier_Tracking_and_Delivery_System</RootNamespace>

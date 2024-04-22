@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Courier Tracking and Delivery System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+549751b910e98a0b9db709bb23b9117f5cf6a35e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+646700874c89070da11d6a99b58221e4b4665e22")]
 [assembly: System.Reflection.AssemblyProductAttribute("Courier Tracking and Delivery System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Courier Tracking and Delivery System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

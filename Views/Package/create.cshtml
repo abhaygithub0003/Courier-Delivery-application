@@ -5,6 +5,11 @@
 <form asp-action="Create" class="container">
     <div class="form-group row mb-3">
         <div class="col-md-6">
+            <label asp-for="Name" class="form-label">Name:</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
             <label asp-for="PickupAddress" class="form-label">Pickup Address:</label>
             <input asp-for="PickupAddress" class="form-control" placeholder="Enter Pickup Address" />
             <span asp-validation-for="PickupAddress" class="text-danger"></span>

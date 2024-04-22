@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace Courier_Tracking_and_Delivery_System.Data.Migrations
+namespace Courier_Tracking_and_Delivery_System.Migrations
 {
     /// <inheritdoc />
-    public partial class anem : Migration
+    public partial class name : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,8 +14,7 @@ namespace Courier_Tracking_and_Delivery_System.Data.Migrations
                 name: "Name",
                 table: "PackageStatuses",
                 type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
         }
 
         /// <inheritdoc />
